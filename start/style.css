@@ -82,11 +82,11 @@
 
 p[data-toggle=popover] {
 	/* How can we show that text has a popover? */
-	border-right: 2px solid gray;
+	/*border-right: 2px solid gray;*/
 	position: relative;
 }
 
-p[data-toggle=popover] .icon-comment {
+p[data-toggle=popover] .icon-info-sign {
 	position: absolute;
 	right: -17px;
 	opacity: .7;
