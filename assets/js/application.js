@@ -1,7 +1,7 @@
 shards.navbar = $('#navbar');
 shards.navbar.height = shards.navbar.height();
 shards.commentIcon = function () {
-	return "<i class='icon-comment'></i>";
+	return "<i class='icon-info-sign'></i>";
 };
 $('#navbarwrapp').css('height', shards.navbar.height);
 
@@ -30,6 +30,12 @@ $('ul.nav li a[href*=#]').bind('click', function(e) {
    window.location.hash = this.hash;
    // edit: Opera requires the "html" elm. animated
 });
+
+
+// Open all google docs links in new page
+// Does not work on popovers - needs to be included in callback
+
+$("a[href*='docs.google.com']").attr("target", "_blank");
 
 
 // Popovers
