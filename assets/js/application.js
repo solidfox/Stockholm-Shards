@@ -1,7 +1,16 @@
 shards.navbar = $('#navbar');
 shards.navbar.height = shards.navbar.height();
-shards.commentIcon = function () {
-	return "<i class='icon-info-sign'></i>";
+shards.navwrapp = $('#navbarwrapp');
+shards.appendCommentIcon = function () {
+	parent = $(this);
+	var comment = $("<span class='label label-info commentIcon'><i class='icon-info-sign icon-white'></i></span>");
+	parent.append(comment);
+	var topOffset = parent.innerHeight()/2 - comment.outerHeight()/2;
+	comment.css({
+		'top': topOffset,
+		'position': 'absolute',
+		'left': -comment.outerWidth()-7+'px'
+	});
 };
 $('#navbarwrapp').css('height', shards.navbar.height);
 
@@ -14,8 +23,7 @@ $(window).resize(function() {
 
 // Sticky navbar
 $(window).scroll(function() {
-	var navwrapp = $('#navbarwrapp');
-	if ($(window).scrollTop() > navwrapp.offset().top - 1) {
+	if ($(window).scrollTop() > shards.navwrapp.offset().top - 1) {
 		shards.navbar.addClass('navbar-fixed-top');
 	} else {
 		shards.navbar.removeClass('navbar-fixed-top');
@@ -40,23 +48,24 @@ $("a[href*='docs.google.com']").attr("target", "_blank");
 
 // Popovers
 $("a[data-toggle=popover]")
-      .popover({html:true})
-      .click(function(e) {
+  .popover({html:true})
+  .click(function(e) {
 		e.preventDefault();
-      });
+  });
 $("p[data-toggle=popover]")
-      .popover({
+  .popover({
 		html:true,
 		trigger:"click",
 		title:"Motivering"
-      })
-      .append(shards.commentIcon());
+  })
+  .each(shards.appendCommentIcon);
 $("p[data-toggle=popover]")
-      .tooltip({
-      	placement:"right",
+  .tooltip({
+		placement:"right",
 		trigger:"hover",
-		title:"Klicka för motivering"
-      });
+		title:"Klicka för motivering",
+		delay:{show:0, hide:500}
+  });
 
 // Carousels
 $('.carousel').carousel();
