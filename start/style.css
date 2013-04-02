@@ -4,7 +4,7 @@
 }
 
 .container > hr {
-	margin:60px 0px 20px 0px;
+	margin:60px 0px 60px 0px;
 }
 
 .jumbotron {
@@ -76,10 +76,6 @@
 	color: #ffffff;
 }
 
-.row-fluid {
-	padding-top: 40px;
-}
-
 p[data-toggle=popover] {
 	/* How can we show that text has a popover? */
 	/*border-right: 2px solid gray;*/
@@ -96,4 +92,8 @@ p[data-toggle=popover] {
 
 .carousel-control {
 	top: 49%;
+}
+
+p img {
+	margin: 10px;
 }

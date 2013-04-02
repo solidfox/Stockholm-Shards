@@ -3,17 +3,22 @@ shards.navbar.height = shards.navbar.height();
 shards.navwrapp = $('#navbarwrapp');
 shards.appendCommentIcon = function () {
 	parent = $(this);
-	var comment = $("<span class='label label-info commentIcon'><i class='icon-info-sign icon-white'></i></span>");
+	var comment = $("<a class='btn btn-mini btn-info commentIcon'>Varför?</a>");
 	parent.append(comment);
-	var topOffset = parent.innerHeight()/2 - comment.outerHeight()/2;
-	comment.css({
-		'top': topOffset,
-		'position': 'absolute',
-		'left': -comment.outerWidth()-7+'px'
-	});
+	comment.addClass('pull-right');
+	// var topOffset = parent.innerHeight()/2 - comment.outerHeight()/2;
+	// comment.css({
+	// 	'top': topOffset,
+	// 	'position': 'absolute',
+	// 	'left': -comment.outerWidth()-7+'px'
+	// });
 };
-$('#navbarwrapp').css('height', shards.navbar.height);
+shards.tooltipInPopover = function (element) {
+	$(element).tooltip('show');
+};
 
+
+$('#navbarwrapp').css('height', shards.navbar.height);
 
 // Movieheight relative to window height
 $(window).resize(function() {
@@ -52,7 +57,7 @@ $("a[data-toggle=popover]")
   .click(function(e) {
 		e.preventDefault();
   });
-$("p[data-toggle=popover]")
+$("p[data-toggle=popover],h2[data-toggle=popover],h3[data-toggle=popover]")
   .popover({
 		html:true,
 		trigger:"click",
@@ -66,6 +71,16 @@ $("p[data-toggle=popover]")
 		title:"Klicka för motivering",
 		delay:{show:0, hide:500}
   });
+
+$('body').on('click', function (e) {
+    $('[data-toggle=popover]').each(function () {
+        //the 'is' for buttons that trigger popups
+        //the 'has' for icons within a button that triggers a popup
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+        }
+    });
+});
 
 // Carousels
 $('.carousel').carousel();
