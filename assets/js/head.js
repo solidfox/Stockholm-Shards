@@ -2,8 +2,8 @@
 
 shards = {};
 shards.setMovieHeight = function () {
-	var movie = document.getElementById("movie");
+	var movie = document.getElementById("conceptmovie");
 	if (movie) {
-		movie.height = window.innerHeight - 80;
+		movie.height = 9 * movie.offsetWidth / 16;
 	}
 };

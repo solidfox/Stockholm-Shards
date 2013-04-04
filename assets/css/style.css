@@ -84,14 +84,23 @@ p[data-toggle=popover] {
 }
 
 .popover {
-	z-index: 3000;
+	z-index: 10000;
 }
 .tooltip.right {
 	margin-left: 6px;
 }
 
 .carousel-control {
-	top: 49%;
+	top: 50%;
+	margin-top: -23px;
+}
+
+img {
+	border-radius: 6px;
+}
+
+.img-polaroid>div.carousel-inner>div.item>img {
+	border-radius: 0;
 }
 
 p img {
@@ -105,5 +114,9 @@ p.lead {
 
 video {
   width: 100%    !important;
-  height: auto   !important;
+  /*height: auto   !important;*/
+}
+
+a.commentIcon {
+	margin: 5px;
 }

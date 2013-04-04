@@ -27,12 +27,11 @@
 
   <body data-spy="scroll" data-target=".navbar" >
     <div class="container" >
-      <video controls autoplay poster="splash.png">
+      <video controls autoplay poster="splash.png" id='conceptmovie'>
         <source src="http://www.csc.kth.se/~dschlaug/MDI/shardsintro.mp4" type="video/mp4">
         <source src="http://www.csc.kth.se/~dschlaug/MDI/shardsintro.webm" type="video/webm">
         Sorry, your browser doesn't support embedded videos, 
-        but don't worry, you can <a href="http://www.csc.kth.se/~dschlaug/MDI/shardsintro.mp4">download it</a>
-        and watch it with your favorite video player!
+        but don't worry, but you can still <a href="http://youtu.be/t_GziJMS5VI">watch it on youtube</a>!
       </video>
       <!-- <video id="introvideo" class="video-js vjs-default-skin" autoplay
         preload="auto" width="100%" poster="splash.png"
@@ -48,18 +47,27 @@
           <div class="navbar-inner" >
             <div class="container" >
               <ul class="nav" >
-                <li><a href="#movie"><i class="icon-film"></i></a></li>
+                <li>
+                  <a data-toggle=popover
+                    data-placement=top
+                    data-trigger=hover
+                    data-content="Konceptfilmen på <img style=margin-top:-6px width=60px src=http://www.youtube.com/yt/brand/media/image/yt-brand-standard-logo-95x40.png />"
+                    href="http://youtu.be/t_GziJMS5VI"
+                    id='movielink'
+                  >
+                    <i class="icon-film"></i> Film
+                  </a></li>
                 <li>
                   <a href="#introstory" >
                     Introstory
                   </a>
                 </li>
                 <li><a href="#karta" >Karta</a></li>
-                <li><a href="#2d_environments" >2D-miljöer</a></li>
+                <li><a href="#2d_environments" >2D Sthlm</a></li>
                 <li><a href="#stories" >Stories</a></li>
                 <li><a href="#shards" >Shards</a></li>
                 <li><a href="#on_site" >På plats</a></li>
-                <li class="btn btn-info buttonnav"><a href="../bakgrund/index.html" >Making of...➤</a></li>
+                <li class="btn btn-info buttonnav"><a href="../bakgrund/index.html" >Making of ➤</a></li>
               </ul>
             </div>
           </div>
@@ -68,209 +76,17 @@
 
       
 
-      <hr id="introstory"/>
-
-      <div class="row-fluid">
-        <div class="span5" >
-          <h2>Introstory</h2>
-          <p>Introstoryn till Stockholm Shards presenterar ett Stockholm som omvandlats till en enda röra av byggnader och platser från stadens långa historia.</p> 
-
-          <p data-toggle="popover" data-content="<p>Uppdraget att bygga ihop Stockholm igen utgör den röda tråden genom spelet. En utmaning i utvecklandet av Stockholm Shards har varit att introducera ett stort antal till stilen mycket olika attraktioner med interaktion både hemma och på plats, allt utan att de många delarna känns lösryckta.</p> <p>Vi blev uppmärksammade på vikten av att ge spelet en tydlig röd tråd. Med en ramberättelse att kunna knyta an till och en huvudkaraktär som följer användaren genom spelet binds allt samman på ett sätt som skapar trygghet och motivation hos användaren att gå från ett moment till ett helt annat.</p>" data-placement="right">Spelets huvudkaraktär Zickle, som av misstag orsakat denna katastrof, vänder sig till spelaren för att få hjälp. Bara tillsammans kan de reda ut det rådande kaoset och sakta återuppbygga Stockholm.</p>
-
-          <h4>MDI-Koncept</h4>
-          <a class="btn btn-mini btn-info" data-title data-toggle='popover' data-placement='bottom' data-content="<p>Zickle är ett typexempel på det <a onmouseover='shards.tooltipInPopover(this)' data-toggle='tooltip' title='Preece, J., Rogers, R., Sharp, H, Interaction Design - Beyond Human-Computer Interaction, 3rd Edition, sid 145'>Preece, J et.al.</a> beskriver som antropomorphism.</p>
-          <p>Preece J et.al pekar på att detta designgrepp är särskilt lämpligt i produkter riktade till barn. Att ha ett djur som man kan interagera med, be om råd, hjälpa och även dela upplevelser med, har visat sig fungera bra för att öka användarens trygghet i spelet och även lust till att fortsätta interaktionen. Två känslor som vi finner avgörande för spelupplevelsen.</p>">Antropomorfism</a>
-        </div>
-                <div class="span7" >
-          <div id="introcarousel" class="carousel slide">
-            <!-- <ol class="carousel-indicators">
-                  <li data-target="#2Dcarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#2Dcarousel" data-slide-to="1" class=""></li>
-                  <li data-target="#2Dcarousel" data-slide-to="2" class=""></li>
-              </ol> -->
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <img src="introstory/kth.png" alt="Illustrerad bild av KTH.">
-                  </div>
-                  <div class="item">
-                    <img src="introstory/lab.png" alt="Illustrerad bild av experimentlab.">
-                  </div>
-                  <div class="item">
-                    <img src="introstory/zicklei.png" alt="Illustrerad bild av Zickle.">
-                  </div>
-                  <div class="item">
-                    <img src="introstory/isoppa.png" alt="Illustrerad bild av tid och tum i kaos.">
-                  </div>
-                </div>
-                <a class="left carousel-control" href="#introcarousel" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#introcarousel" data-slide="next">›</a>
-              </div>
-        </div>
-      </div>
+      <div class='alert alert-info' load=introstory.htm>Loading...</div>
       
-      <hr id="karta"/>
-			<div class="row-fluid">
-        <div class="span5" >
-          <h2>Karta</h2>
-          <p>För att spelaren ska kunna välja vilken värld de vill spela i kan hen snurra på på den tredimensionella kartan och med ett enkelt fingertryck på skärmen börja utforska den markerade världen.
-          Kartan är till en början tom men desto fler föremål och uppdrag spelaren klarar av, desto mer liv kommer kartan få. Byggnader, människor och djur dyker upp och till slut kommer ett nytt Stockholm stå att skåda där ovanpå. </p>
-
-
-          <p data-toggle="popover" data-content="<p>Kartans syfte är att tydlig avgränsa vilka val användaren kan göra samt att ge feedback på hur långt spelaren kommit i spelet. Detta bygger på det klassiska spelkonceptet med olika världar och banor som spelaren kan välja bland och klara av efterhand. Detta anknyter till två av Nielsens heuristiker, att hålla användaren uppdaterad om systems läge samt att hålla sig till standarder som redan finns i den plattform man arbetar med.</p>" data-placement='bottom'>
-
-          <h4>MDI-Koncept</h4>
-          <a class="btn btn-mini btn-info" data-title data-toggle='popover' data-placement='bottom' data-content="<p>Kartans utformning som ett snurrbart cirkulärt objekt är menat att påminna om en karusell, en konceptuell modell som barn bör vara bekanta med. Eftersom det i våra “Think Aloud”-övningar med barn visade sig att de kunde hantera panorering bra fick vi ytterligare stöd i att en snurrbar karta skulle förstås av barn.</p>">Konceptuell Modell</a>
-        </div>
-        <div class="span7" >
-        <iframe width="560" height="315" src="http://www.youtube.com/embed/Nhz3O5SORhc" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
+      <div class='alert alert-info' load=karta.htm>Loading...</div>
       
-      <hr id="2d_environments"/>
-
-			<div class="row-fluid">
-        <div class="span5" >
-          <h2 
-            data-toggle="popover" 
-            data-placement="bottom" 
-            data-content="<p>Detta designval gjordes med utgångspunkt i våra <a target='_blank' href='https://docs.google.com/document/d/1hClhnUXFpcP08XBQjvROzkz0C853mnKk4MZa0McR7tQ/edit?usp=sharing'>intervjuer</a>. Både barnen och deras föräldrar betonar hur viktigt igenkänning är för barnens upplevelse av en plats. De beskriver att det är roligt att besöka platser som känns igen från filmer, spel och böcker men att det också är roligt att se film och spelskildringar av en plats en 
-            känner igen från verkligheten.</p> <p>Stockholmsmiljöerna hoppas vi kan förhöja stadsupplevelsen för den som börjar spela innan resan och göra det roligare att fortsätta spela efter resan för den som t.ex. upptäckt appen genom ett museibesök.</p>">
-            2D Miljöer</h2>
-          <p>Bakom varje kategori i 3D-kartan öppnar sig en en 2D-miljö för spelaren att utforska. Miljöerna skildrar ett trasigt men fortfarande igenkännbart Stockholm.</p>
-
-          <p>Samtidigt som spelaren rör sig i  spelmiljön för att hitta föremål och uppdrag att lösa, får hen en promenad genom staden.</p>
-
-          <h4>MDI koncept</h4>
-          <a href="#" class="btn btn-mini btn-info" data-toggle="popover" data-placement="bottom" data-content="Att spelaren själv väljer vilka gränder och byggnader hen vill gå in i bidrar till det utforskande interaktionssätt som vi vill ska genomsyra hela spelet. I våra obeservationer av barn som fått i uppgift att <a target='_blank' href='https://docs.google.com/document/d/1DN2N4PR_QXLs0OuV5CDvyZWq8ZP0ghWfqe6UX2OutkU/edit?usp=sharing'> använda olika hemsidor</a> får vi starkt stöd för detta val av interaktionssätt. Samtliga barn vi träffade visade på ett sätt att interagera med hemsidor där <a target='_blank' href='https://docs.google.com/document/d/1FCGMMpp8fUEVCK1PUowTE8M_EnpQoRbiBv_NIDcvEsQ/edit?pli=1'> upptäckslusten </a> <a target='_blank' href='https://docs.google.com/document/d/19VG3JN0Q9Yx18nSBgdtQVPFDNQ_VkcuuneBN9Do7fjY'> fick styra </a> framför en strukturerad navigering genom menyer och infotexter." title="Utforskning">Utforskande interaktionssätt</a>
-        </div>
-        <div class="span7" >
-          <div id="2Dcarousel" class="carousel slide">
-            <!-- <ol class="carousel-indicators">
-                  <li data-target="#2Dcarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#2Dcarousel" data-slide-to="1" class=""></li>
-                  <li data-target="#2Dcarousel" data-slide-to="2" class=""></li>
-              </ol> -->
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <img src="2d_environment/stortorget.png" alt="Illustrerad bild av stortorget i gammla stan.">
-                  </div>
-                  <div class="item">
-                    <img src="2d_environment/gammlastan.png" alt="Illustrerad bild av en gränd i gammla stan. Byggnaderna är något trasiga.">
-                  </div>
-                  <div class="item">
-                    <img src="2d_environment/ostasiatiska.png" alt="Illustrerad bild av Ostasiatiska museet på skeppsholmen. Halva museet har fallit isär.">
-                  </div>
-                </div>
-                <a class="left carousel-control" href="#2Dcarousel" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#2Dcarousel" data-slide="next">›</a>
-              </div>
-        </div>
-      </div>
+      <div class='alert alert-info' load=2denvironments.htm>Loading...</div>
       
-      <hr id="stories"/>
+      <div class='alert alert-info' load=stories.htm>Loading...</div>
 
-			<div class="row-fluid">
-        <div class="span5" >
-          <h2>Stories</h2>
-          <p data-toggle="popover" 
-            data-placement="left" 
-            data-content="<p>Bakom exempelvis det, för ett barn, torftiga och statiska museet finns ofta spännande legender, människor och platser. Dessa vill vi förmedla till spelaren så hen har något att koppla museet till när hen kommer dit. Precis som vi vuxna redan har eller får på plats genom torra skyltar.</p>">I spelets Stockholm går det att hitta trasiga platser och saker med äventyr kopplade till sig. Med Zickles makt över tid och rum kommer dessa att ta spelaren till tider och platser såsom dagen då vasaskeppet sjösattes, det mystiska forna Japan eller fantasivärlden i huvudet på Salvador Dalí.</p>
-          <p data-toggle="popover" 
-            data-placement="left" 
-            data-content="<p>För att engagera så många som möjligt använder vi mycket av det som barn vi undersökt gillar: interaktivitet, utforskning och igenkänning.</p>">I äventyren får spelaren uppleva bakgrunden till det som hen funnit, men något i historien har gått snett. Genom att interagera med karaktärerna och platserna kan hen och Zickle rätta till tidrummet igen och reparera den trasiga platsen eller saken.</p>
-          </div>
-        <div class="span7" >
-          <img src="stories/warptojapan.png" width="100%" /></div></div>
-      <div class="row-fluid">
-        <div class="span7">
-
-
-        </div>
-        <div class="span5">
-          <h3>Klassisk peka och klicka</h3>
-          <p data-toggle="popover" data-placement="left" data-content="Vi föreställde oss först en värld i full 3D men tonade ned ambitionerna till 2D framförallt för att vi vill göra det lätt för museum att illustrera sina egna stories. I <a href='https://docs.google.com/document/d/1DIduISvagl1-EhgRFH1XbqfwTl6vd04oKUFpYsrBDSU/edit?usp=sharing'>vår kommunikation med museerna</a> har de visat sig entusiastiska över idén och vi vill att de, som experter på sina utställningar, ska kunna spela en central roll i att berätta historierna.">Den som spelat någon av klassikerna Monkey Island, Broken Sword eller Discworld kommer känna igen interaktionen i Stockholm Shards. Zickle styrs med klassisk peka-klicka interaktion genom en ritad 2D värld med platser att utforska, shards att hitta och karaktärer att prata med.</p></div></div>
+      <div class='alert alert-info' load=shards.htm>Loading...</div>
       
-      <hr id="shards"/>
-
-			<div class="row-fluid">
-        <div class="span5" >
-          <h2>Shards</h2>
-          <p>Under spelets gång kan spelaren samla på sig föremål i form av bitar av Stockholm (Shards). Föremålen är inte bara till för att lägga på hög, utan varje unikt föremål kan spelaren titta närmare på i 3D. Tricket med dessa föremål är att det i deras 3D-modeller finns små titthål. Titthål som tillåter spelaren att titta in på det verkliga Stockholm. Varje föremål skildrar en attraktion eller aktivitet värd att besöka.</p>
-          <p data-toggle="popover" data-content="<p>Att i ett spel ha en valuta eller annan form av föremål som spelaren kan samla på är ett typiskt spelkoncept. Här vill vi kombinera detta koncept med att bilderna inuti föremålen ska bidra till att inspirera till och känna igen aktiviteter i Stockholm. Vi valde att utforma föremålen så här eftersom barn främst fokuserade på bilder när de skulle inhämta i information i de “Think Aloud”-övningar vi utförde. Dessutom visade övningarna att barnen föredrog ett utforskande interaktionssätt, vilket vi försöker fånga med utforskningsbara 3D-modeller. Genom den här designen blir det även lätt för till exempel museerna själva att bidra med bilder för att kunna skapa nya föremål för aktuella aktiviteter, som sedan kan hittas inuti spelet.</p>" data-placement='bottom'>
-        </div>
-        <div class="span7" >
-          <iframe width="560" height="315" src="http://www.youtube.com/embed/ePpeWA1i4M4" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-      
-
-
-<!-- --------------- PÅ PLATS ---------------- -->
-
-      <hr id="on_site"/>
-      <div class="row-fluid">
-        <div class="span5" >
-          <h2>På plats</h2>
-          <p data-toggle="popover" 
-            data-placement="right" 
-            data-content="Under de <a href='http://www.google.com/url?q=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1fbz4dmBBc4cCFKoFFWr2-siTmqcmvaxzHsHwCy6tDVo%2Fedit'>intevjuer</a> Under de intevjuer vi gjort med barn har det framgått att museum ofta upplevs som tråkiga och då framförallt om de saknar interaktiva inslag.">
-            <p>Stockholm Shards slutar inte vid inspiration innan resan, utan gör även själva vistelsen i staden roligare. Spelet levandegör och förstärker verkligheten på museum och andra platser i Stockholm.</p>
-            <p>Appen kan börja användas för första gången direkt på museerna, så de kan marknadsföra och tipsa om Stockholm Shards. </p>
-            <h3>AR</h3>
-            <p> Vi vill presentera innehållet i utställningarna på ett sätt som ger barnen en “wow-känsla”, och för att åstadkomma detta har vi tänkt använda oss av Augmented Reality (AR). Vi tror att detta är ett mycket bra sätt att levandegöra museimiljöerna för barn.
-            AR är en teknik som blir både vanligare och billigare för varje år. Från vårt <a target='_blank' href='https://docs.google.com/document/d/1DIduISvagl1-EhgRFH1XbqfwTl6vd04oKUFpYsrBDSU/edit?usp=sharing'>studiebesök på Moderna museet</a> vet vi att det finns ett intresse från museernas sida för att använda AR, än så länge har det dock varit alltför dyrt för ett museum att ta in på egen hand. Vår produkt öppnar upp möjligheten för att skapa en gemensam plattform för museerna i Stockholm där de kan dela kostnaden för dyra funktioner så som AR.
-            </p>
-        </div>
-        <div class="span7">
-            <img src="plats/quest2.jpg" alt="Foto av quest.">
-        </div>
-    </div>
-
-    
-      <p class="lead text-center">Utmaningarna varierar beroende på plats, här är två att uppleva på Moderna museet:</p>
-          
-
-          <div class="row-fluid">
-              <div class="span6">
-                      <div class="item">
-                      <img src="plats/quest1.jpg" alt="Foto av quest.">
-                      </div>
-              </div>
-              <div class="span6">
-                       <div class="item">
-                      <img src="plats/create1.jpg" alt="Foto av create.">
-                      </div>
-              </div>
-          </div>
-                                  
-
-      <div class="row-fluid">
-        <div class="span6">
-          <h3 data-toggle="popover" 
-            data-placement="right" 
-            data-content="Genom att spelaren vid avklarat mysterieuppdrag belönas med en Shard fås en koppling till spelets huvudstory. Tanken är att spelaren ska kunna använda sina kunskaper från spelets huvuddel men att mysteriet även ska kunna lösas utan dessa förkunskaper.">Lös mysteriet</h3>
-          <p>I Mysterievandring kommer spelaren snabbt och lätt in i spelet. Spelaren får interagera med de olika karaktärerna och konstverken på utställningen för att hitta ledtrådar som leder fram till den Shard som finns gömd någonstans på museet. </p>
-        </div>
-        <div class="span6">
-          <h3 data-toggle="popover" 
-            data-placement="left" 
-            data-content="I våra intervjuer fann vi att de populäraste spelen var de där spelaren kunde lämna ett personligt avtryck såsom Minecraft och Little Big Planet. I vårt spel tar de kreativa på plats-aktiviteterna denna roll.">
-            Måla på tavlor</h3>
-          <p>I “Måla på tavlor” kan spelaren måla sina egna versioner av verken på museet. Spelaren kan t.ex. göra sin egen tolkning av ett abstrakt konstverk eller rita en häftig utbyggnad av ett hus. Det som användaren har skapat kan sedan sparas och delas med vänner.
-
-
-          </p>
-        </div>
-          
-
-          <h4>MDI-Koncept</h4>
-          <a  class="btn btn-small btn-info" 
-              data-title="Context"
-              data-toggle='popover' 
-              data-placement='right' 
-              data-content="Museimiljön sätter vissa begränsningar för aktiviteterna, det är t.ex. inte önskvärt att ha barn som springer runt på ett museum. Vi har därför skapat aktiviteter som barnen kan göra utan tidspress."
-          >Context</a>
-          </div>   
+      <div class='alert alert-info' load=onsite.htm> Loading...</div>
      
       <div class="footer" style="position: relative;" >
         <hr/>
